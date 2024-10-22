@@ -1,12 +1,7 @@
 # Turtle_Race:
-
+from tkinter import messagebox
 import turtle as t
 from random import *
-from rich.console import Console
-
-def clrall():
-    console = Console()
-    console.clear()
 
 ss = t.Screen()
     
@@ -37,7 +32,6 @@ user = ss.textinput('Who Will Win?', 'Enter Turtle color')
 
 if (user == ''):
     ss.clear()
-    clrall()
     print(f"Run Again to play the Game.")
     ss.exitonclick()
       
@@ -50,11 +44,9 @@ while True:
         
         if (x >= 480):
             if (user == clr[run]):
-                clrall()
-                print(f"Yes!, the {clr[run]} Turtle is the Winner.")
+                messagebox.showinfo(title="Yes! Correct", message=f"Winner: {clr[run].upper()} Turtle")
                 ss.exitonclick()
                 
             else:
-                clrall()
-                print(f"Sorry!, the {clr[run]} Turtle is the Winner.")
+                messagebox.showinfo(title="Better Luch Next Time!", message=f"Winner: {clr[run].upper()} Turtle")
                 ss.exitonclick()
