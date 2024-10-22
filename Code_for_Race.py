@@ -32,7 +32,7 @@ user = ss.textinput('Who Will Win?', 'Enter Turtle color')
 
 if (user == ''):
     ss.clear()
-    print(f"Run Again to play the Game.")
+    messagebox.showwarning(title="Warning!", message="Empty Space found!")
     ss.exitonclick()
       
 while True:
